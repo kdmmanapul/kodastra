@@ -66,28 +66,28 @@ const About: React.FC = () => {
 
   const teamMembers = [
     {
-      name: 'Alex Johnson',
-      role: 'CEO & Founder',
-      image: '/images/team/team1.jpg',
-      bio: 'With over 15 years of experience in tech leadership, Alex founded Kodastra with a vision to create innovative digital solutions.',
+      name: 'Microsoft',
+      role: 'Cloud Solutions Partner',
+      image: '/images/about/microsoft.png',
+      bio: 'Strategic abouthip delivering enterprise-grade cloud solutions and AI services through the Azure platform.',
     },
     {
-      name: 'Sarah Chen',
-      role: 'CTO',
-      image: '/images/team/team2.jpg',
-      bio: 'Sarah leads our technical strategy and oversees all development projects, bringing expertise in AI and blockchain technologies.',
+      name: 'AWS',
+      role: 'Cloud Infrastructure Partner',
+      image: '/images/about/aws.png',
+      bio: 'Advanced consulting partner providing scalable cloud infrastructure and serverless computing solutions.',
     },
     {
-      name: 'Michael Rodriguez',
-      role: 'Lead Developer',
-      image: '/images/team/team3.jpg',
-      bio: 'Michael specializes in full-stack development and has led numerous successful projects for enterprise clients.',
+      name: 'Google Cloud',
+      role: 'Machine Learning Partner',
+      image: '/images/about/gcp.png',
+      bio: 'Certified partner specializing in implementing machine learning and data analytics solutions.',
     },
     {
-      name: 'Emily Taylor',
-      role: 'Design Director',
-      image: '/images/team/team4.jpg',
-      bio: 'Emily brings creative vision to all our projects, ensuring beautiful and intuitive user experiences across all platforms.',
+      name: 'Salesforce',
+      role: 'CRM Solutions Partner',
+      image: '/images/about/salesforce.png',
+      bio: 'Platinum consulting partner delivering customized CRM and business automation solutions.',
     },
   ];
 
@@ -218,7 +218,7 @@ const About: React.FC = () => {
           >
             <div className="relative h-[500px] rounded-xl overflow-hidden border border-[#333] hover:border-[#505070] transition-all duration-300 shadow-xl">
               <Image
-                src="/images/about/office.jpg"
+                src="/images/about/hq.jpg"
                 alt="Kodastra Office"
                 fill
                 className="object-cover"
@@ -279,9 +279,9 @@ const About: React.FC = () => {
         {/* Team */}
         <div>
           <div className="text-center mb-12">
-            <h3 className="text-2xl md:text-3xl font-semibold mb-4 bg-gradient-to-r from-[#c0c0c0] via-white to-[#a0a0c0] bg-clip-text text-transparent">Meet Our Team</h3>
+            <h3 className="text-2xl md:text-3xl font-semibold mb-4 bg-gradient-to-r from-[#c0c0c0] via-white to-[#a0a0c0] bg-clip-text text-transparent">Our Partners</h3>
             <p className="text-[#d0d0d0] max-w-2xl mx-auto">
-              Our diverse team of experts brings together years of experience across various technology domains.
+              We collaborate with industry-leading partners who share our commitment to innovation and excellence in technology.
             </p>
           </div>
           

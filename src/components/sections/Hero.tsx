@@ -157,12 +157,42 @@ const Hero: React.FC = () => {
           preserveAspectRatio="none" 
           className="absolute bottom-0 left-0 w-full h-full"
         >
-          <path 
+          <motion.path 
             d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V0C0,0,0,0,0,0z" 
             fill="#0a0a15"
             fillOpacity="1"
-          ></path>
+            animate={{
+              d: [
+                "M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V0C0,0,0,0,0,0z",
+                "M321.39,26.44c58-15.79,114.16-40.13,172-31.86,82.39-6.72,168.19-7.73,250.45,9.61C823.78,21,906.67,52,985.66,72.83c70.05,8.48,146.53,16.09,214.34,-7V120H0V0C0,0,0,0,0,0z",
+                "M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V0C0,0,0,0,0,0z"
+              ]
+            }}
+            transition={{
+              duration: 8,
+              repeat: Infinity,
+              repeatType: "reverse",
+              ease: "easeInOut"
+            }}
+          />
         </svg>
+        
+        {/* Add a subtle highlight that moves along the wave */}
+        <motion.div 
+          className="absolute bottom-0 left-0 w-full h-full z-5 opacity-30"
+          animate={{
+            background: [
+              "linear-gradient(90deg, transparent 0%, rgba(71, 118, 230, 0.2) 50%, transparent 100%)",
+              "linear-gradient(90deg, transparent 100%, rgba(71, 118, 230, 0.2) 50%, transparent 0%)",
+            ]
+          }}
+          transition={{
+            duration: 10,
+            repeat: Infinity,
+            repeatType: "loop",
+            ease: "linear"
+          }}
+        />
       </div>
 
       {/* Scroll indicator */}

@@ -102,20 +102,20 @@ const Technologies: React.FC = () => {
     // AI & Machine Learning
     { name: 'TensorFlow', icon: '/images/tech/tensorflow.svg', category: 'ai' },
     { name: 'PyTorch', icon: '/images/tech/pytorch.svg', category: 'ai' },
-    { name: 'OpenAI', icon: '/images/tech/openai.svg', category: 'ai' },
-    { name: 'Hugging Face', icon: '/images/tech/huggingface.svg', category: 'ai' },
+    { name: 'OpenAI', icon: '/images/tech/openai.webp', category: 'ai' },
+    { name: 'Hugging Face', icon: '/images/tech/huggingface.png', category: 'ai' },
     
     // Web3 & Blockchain
     { name: 'Ethereum', icon: '/images/tech/ethereum.svg', category: 'web3' },
     { name: 'Solidity', icon: '/images/tech/solidity.svg', category: 'web3' },
-    { name: 'Web3.js', icon: '/images/tech/web3js.svg', category: 'web3' },
+    { name: 'Web3.js', icon: '/images/tech/web3js.png', category: 'web3' },
     { name: 'Hardhat', icon: '/images/tech/hardhat.svg', category: 'web3' },
     
     // Frontend
     { name: 'React', icon: '/images/tech/react.svg', category: 'frontend' },
     { name: 'Next.js', icon: '/images/tech/nextjs.svg', category: 'frontend' },
     { name: 'TypeScript', icon: '/images/tech/typescript.svg', category: 'frontend' },
-    { name: 'Tailwind CSS', icon: '/images/tech/tailwindcss.svg', category: 'frontend' },
+    { name: 'Tailwind CSS', icon: '/images/tech/tailwind.svg', category: 'frontend' },
     
     // Backend
     { name: 'Node.js', icon: '/images/tech/nodejs.svg', category: 'backend' },
@@ -127,7 +127,7 @@ const Technologies: React.FC = () => {
     { name: 'AWS', icon: '/images/tech/aws.svg', category: 'cloud' },
     { name: 'Docker', icon: '/images/tech/docker.svg', category: 'cloud' },
     { name: 'Kubernetes', icon: '/images/tech/kubernetes.svg', category: 'cloud' },
-    { name: 'CI/CD', icon: '/images/tech/cicd.svg', category: 'cloud' },
+    { name: 'Github', icon: '/images/tech/github.svg', category: 'cloud' },
   ];
 
   return (

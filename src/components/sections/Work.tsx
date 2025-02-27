@@ -31,7 +31,7 @@ const Work: React.FC = () => {
       title: 'AI-Powered Analytics Dashboard',
       category: 'ai',
       description: 'A comprehensive analytics dashboard with AI-driven insights and predictive analytics for business intelligence.',
-      image: '/images/projects/project1.jpg',
+      image: '/images/projects/project1.png',
       technologies: ['React', 'TensorFlow.js', 'Node.js', 'D3.js'],
     },
     {
@@ -39,7 +39,7 @@ const Work: React.FC = () => {
       title: 'Decentralized Finance Platform',
       category: 'web3',
       description: 'A DeFi platform enabling users to lend, borrow, and stake cryptocurrencies in a decentralized manner.',
-      image: '/images/projects/project2.jpg',
+      image: '/images/projects/project2.png',
       technologies: ['Solidity', 'Ethereum', 'Web3.js', 'React'],
     },
     {
@@ -47,7 +47,7 @@ const Work: React.FC = () => {
       title: 'E-commerce Web Application',
       category: 'web',
       description: 'A modern e-commerce platform with real-time inventory management, payment processing, and customer analytics.',
-      image: '/images/projects/project3.jpg',
+      image: '/images/projects/project3.png',
       technologies: ['Next.js', 'Stripe', 'MongoDB', 'Tailwind CSS'],
     },
     {
@@ -55,7 +55,7 @@ const Work: React.FC = () => {
       title: 'Smart City Management System',
       category: 'software',
       description: 'An integrated system for managing urban infrastructure, including traffic, utilities, and public services.',
-      image: '/images/projects/project4.jpg',
+      image: '/images/projects/project4.png',
       technologies: ['Python', 'IoT', 'AWS', 'React'],
     },
     {
@@ -63,7 +63,7 @@ const Work: React.FC = () => {
       title: 'NFT Marketplace',
       category: 'web3',
       description: 'A platform for creating, buying, selling, and trading non-fungible tokens with advanced search and filtering.',
-      image: '/images/projects/project5.jpg',
+      image: '/images/projects/project5.png',
       technologies: ['Ethereum', 'IPFS', 'Next.js', 'GraphQL'],
     },
     {
@@ -71,7 +71,7 @@ const Work: React.FC = () => {
       title: 'Natural Language Processing API',
       category: 'ai',
       description: 'An API service providing sentiment analysis, entity recognition, and text classification capabilities.',
-      image: '/images/projects/project6.jpg',
+      image: '/images/projects/project6.png',
       technologies: ['Python', 'Hugging Face', 'FastAPI', 'Docker'],
     },
   ];

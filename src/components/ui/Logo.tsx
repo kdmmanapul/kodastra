@@ -20,7 +20,7 @@ const Logo: React.FC<LogoProps> = ({ className = '' }) => {
         whileHover={{ scale: 1.05 }}
       >
         <motion.div 
-          className="relative w-10 h-10 mr-2 purple-glow rounded-full overflow-hidden"
+          className="relative w-10 h-10 mr-3 purple-glow rounded-full overflow-hidden"
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
           transition={{ duration: 0.5, delay: 0.2 }}
@@ -30,13 +30,13 @@ const Logo: React.FC<LogoProps> = ({ className = '' }) => {
             alt="Kodastra Logo" 
             width={40} 
             height={40} 
-            className="object-contain"
+            className="object-contain mt-1"
           />
         </motion.div>
         <motion.span 
-          className="text-xl font-bold bg-gradient-to-r from-[#c0c0c0] via-white to-[#a0a0c0] bg-clip-text text-transparent"
-          initial={{ x: -20, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
+          className="text-2xl font-extrabold tracking-wider uppercase bg-gradient-to-r from-[#c0c0c0] via-white to-[#a0a0c0] bg-clip-text text-transparent"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.6 }}
         >
           KODASTRA

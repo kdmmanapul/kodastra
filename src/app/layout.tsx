@@ -20,6 +20,17 @@ export const metadata: Metadata = {
   keywords: ["AI", "Web3", "Software Development", "Web Applications", "Software Agency"],
   authors: [{ name: "Kodastra" }],
   creator: "Kodastra",
+  icons: {
+    icon: [
+      { url: "/images/logo.png", sizes: "32x32" },
+      { url: "/images/logo.png", sizes: "16x16" }
+    ],
+    apple: { url: "/images/logo.png", sizes: "180x180" },
+    shortcut: { url: "/images/logo.png" }
+  },
+};
+
+export const viewport = {
   themeColor: "#0a0a0a",
 };
 
