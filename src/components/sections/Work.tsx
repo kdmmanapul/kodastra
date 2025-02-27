@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState, useMemo } from 'react';
 import { motion } from 'framer-motion';
 import gsap from 'gsap';
 import Image from 'next/image';
@@ -24,8 +24,8 @@ const Work: React.FC = () => {
   const [filteredProjects, setFilteredProjects] = useState<Project[]>([]);
   const [isClient, setIsClient] = useState(false);
 
-  // Sample projects data
-  const projectsData: Project[] = [
+  // Sample projects data wrapped in useMemo
+  const projectsData = useMemo<Project[]>(() => [
     {
       id: 1,
       title: 'AI-Powered Analytics Dashboard',
@@ -74,7 +74,7 @@ const Work: React.FC = () => {
       image: '/images/projects/project6.png',
       technologies: ['Python', 'Hugging Face', 'FastAPI', 'Docker'],
     },
-  ];
+  ], []);
 
   useEffect(() => {
     setIsClient(true);
@@ -85,7 +85,7 @@ const Work: React.FC = () => {
       setProjects(projectsData);
       setFilteredProjects(projectsData);
     }
-  }, [isClient]);
+  }, [isClient, projectsData]);
 
   useEffect(() => {
     const ctx = gsap.context(() => {

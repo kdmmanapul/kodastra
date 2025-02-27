@@ -52,7 +52,7 @@ const About: React.FC = () => {
 
       // Animate the stats with count up effect
       if (isClient) {
-        statsRefs.current.forEach((ref, index) => {
+        statsRefs.current.forEach((ref) => {
           if (ref) {
             const statValue = parseInt(ref.getAttribute('data-value') || '0', 10);
             countUp(ref, statValue);
@@ -144,7 +144,7 @@ const About: React.FC = () => {
             ref={subheadingRef}
             className="text-lg text-[#d0d0d0] max-w-2xl mx-auto"
           >
-            We're a team of passionate technologists dedicated to creating innovative digital solutions that drive business growth.
+            We&apos;re a team of passionate technologists dedicated to creating innovative digital solutions that drive business growth.
           </p>
         </div>
 
@@ -163,7 +163,7 @@ const About: React.FC = () => {
                 Founded in 2019, Kodastra began with a simple mission: to help businesses leverage cutting-edge technology to solve real-world problems. What started as a small team of four passionate developers has grown into a full-service software agency with expertise across multiple domains.
               </p>
               <p>
-                We believe that technology should be accessible, intuitive, and impactful. Our approach combines technical excellence with creative thinking, allowing us to deliver solutions that not only meet but exceed our clients' expectations.
+                We believe that technology should be accessible, intuitive, and impactful. Our approach combines technical excellence with creative thinking, allowing us to deliver solutions that not only meet but exceed our clients&apos; expectations.
               </p>
               <p>
                 Today, we specialize in AI solutions, Web3 development, web applications, and custom software development, serving clients from startups to enterprise organizations across various industries.
@@ -187,7 +187,7 @@ const About: React.FC = () => {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
-                  <span className="text-[#d0d0d0]"><span className="text-white font-medium">Quality:</span> We're committed to excellence in everything we do, from code to client communication.</span>
+                  <span className="text-[#d0d0d0]"><span className="text-white font-medium">Quality:</span> We&apos;re committed to excellence in everything we do, from code to client communication.</span>
                 </li>
                 <li className="flex items-start">
                   <div className="bg-gradient-to-r from-[#505070] to-[#3a1c71] p-1 rounded-full mr-3 mt-1 shadow-lg purple-glow">
@@ -203,7 +203,7 @@ const About: React.FC = () => {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
-                  <span className="text-[#d0d0d0]"><span className="text-white font-medium">Integrity:</span> We believe in transparency, honesty, and doing what's right for our clients.</span>
+                  <span className="text-[#d0d0d0]"><span className="text-white font-medium">Integrity:</span> We believe in transparency, honesty, and doing what&apos;s right for our clients.</span>
                 </li>
               </ul>
             </div>

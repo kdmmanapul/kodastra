@@ -121,14 +121,14 @@ const Contact: React.FC = () => {
             ref={headingRef}
             className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-[#c0c0c0] via-white to-[#a0a0c0] bg-clip-text text-transparent"
           >
-            Let's Build Something Amazing
+            Let&apos;s Build Something Amazing
           </h2>
           
           <p 
             ref={subheadingRef}
             className="text-lg text-[#d0d0d0] max-w-2xl mx-auto"
           >
-            Have a project in mind? We'd love to hear about it. Drop us a line and we'll get back to you as soon as possible.
+            Have a project in mind? We&apos;d love to hear about it. Drop us a line and we&apos;ll get back to you as soon as possible.
           </p>
         </div>
 

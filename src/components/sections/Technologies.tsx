@@ -4,6 +4,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import gsap from 'gsap';
 import AnimatedBackground from '../ui/AnimatedBackground';
+import Image from 'next/image';
 
 interface TechItemProps {
   name: string;
@@ -41,7 +42,13 @@ const TechItem: React.FC<TechItemProps> = ({ name, icon, delay, category }) => {
       whileHover={{ y: -5, transition: { duration: 0.2 } }}
     >
       <div className={`w-16 h-16 md:w-20 md:h-20 bg-gradient-to-br ${getBgGradient()} backdrop-blur-sm rounded-xl flex items-center justify-center mb-3 border border-[#333] hover:border-[#505070] transition-all duration-300 shadow-lg`}>
-        <img src={icon} alt={name} className="w-10 h-10 md:w-12 md:h-12 object-contain" />
+        <Image 
+          src={icon} 
+          alt={name} 
+          width={48} 
+          height={48} 
+          className="w-10 h-10 md:w-12 md:h-12 object-contain" 
+        />
       </div>
       <span className="text-[#d0d0d0] text-sm">{name}</span>
     </motion.div>

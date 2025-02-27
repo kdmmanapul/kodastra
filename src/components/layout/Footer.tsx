@@ -4,7 +4,6 @@ import React from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import Logo from '../ui/Logo';
-import AnimatedBackground from '../ui/AnimatedBackground';
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
