@@ -6,8 +6,15 @@
 }
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0a0a0a;
+  --foreground: #ededed;
+  --primary: #c0c0c0;
+  --primary-dark: #a0a0a0;
+  --accent: #404040;
+  --accent-light: #505050;
+  --text-primary: #ffffff;
+  --text-secondary: #c0c0c0;
+  --text-muted: #808080;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -20,5 +27,61 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+@layer utilities {
+  .text-gradient {
+    background: linear-gradient(to right, var(--primary), #ffffff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .border-gradient {
+    border-image: linear-gradient(to right, var(--primary), var(--accent)) 1;
+  }
+  
+  .bg-gradient {
+    background: linear-gradient(to right, var(--background), var(--accent));
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-dark);
+}
+
+/* Animation classes */
+.fade-in {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+}
+
+.slide-up {
+  transform: translateY(50px);
+  opacity: 0;
+  transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+}
+
+.slide-up.visible {
+  transform: translateY(0);
+  opacity: 1;
 }

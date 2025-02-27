@@ -1,36 +1,111 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Kodastra Landing Page
+
+A modern, animated landing page for Kodastra, a software agency specializing in AI, Web3, web applications, and software development.
+
+## Features
+
+- Responsive design for all device sizes
+- Modern black and silver theme
+- Engaging animations using GSAP and Framer Motion
+- Interactive UI components
+- Optimized performance
+
+## Tech Stack
+
+- **Framework**: Next.js 14
+- **Styling**: Tailwind CSS
+- **Animations**: 
+  - GSAP (GreenSock Animation Platform)
+  - Framer Motion
+- **Typography**: Geist font family
+- **Deployment**: Vercel (recommended)
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- Node.js 18.17 or later
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/kodastra-landing-page.git
+   cd kodastra-landing-page
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   # or
+   yarn install
+   # or
+   pnpm install
+   ```
+
+3. Run the development server:
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   # or
+   pnpm dev
+   ```
+
+4. Open [http://localhost:3000](http://localhost:3000) in your browser to see the result.
+
+## Project Structure
+
+- `src/app`: Main application pages
+- `src/components`: Reusable UI components
+  - `layout`: Layout components (Navbar, Footer)
+  - `sections`: Page sections (Hero, Services, etc.)
+  - `ui`: UI components (Logo, buttons, etc.)
+- `src/lib`: Utility functions and animations
+- `public`: Static assets
+
+## Customization
+
+### Colors
+
+The main colors are defined in `src/app/globals.css` as CSS variables:
+
+```css
+:root {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+  --primary: #c0c0c0;
+  --primary-dark: #a0a0a0;
+  --accent: #404040;
+  --accent-light: #505050;
+  --text-primary: #ffffff;
+  --text-secondary: #c0c0c0;
+  --text-muted: #808080;
+}
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Images
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Replace the placeholder images in the `public/images` directory with your own:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Team member photos: `public/images/team/`
+- Project screenshots: `public/images/projects/`
+- About section images: `public/images/about/`
+- Technology logos: `public/images/tech/`
 
-## Learn More
+## Deployment
 
-To learn more about Next.js, take a look at the following resources:
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Check out the [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## License
 
-## Deploy on Vercel
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Acknowledgements
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- [Next.js](https://nextjs.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [GSAP](https://greensock.com/gsap/)
+- [Framer Motion](https://www.framer.com/motion/)
