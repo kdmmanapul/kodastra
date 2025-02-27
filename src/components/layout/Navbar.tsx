@@ -8,10 +8,24 @@ import Logo from '../ui/Logo';
 const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [activeLink, setActiveLink] = useState('');
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
+      
+      // Determine active section based on scroll position
+      const sections = ['hero', 'services', 'work', 'about', 'technologies', 'contact'];
+      for (const section of sections) {
+        const element = document.getElementById(section);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          if (rect.top <= 100 && rect.bottom >= 100) {
+            setActiveLink(`#${section}`);
+            break;
+          }
+        }
+      }
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -61,16 +75,21 @@ const Navbar: React.FC = () => {
             <motion.div key={link.name} variants={linkVariants}>
               <Link 
                 href={link.href}
-                className="text-[#c0c0c0] hover:text-white transition-colors duration-300 text-sm uppercase tracking-wider"
+                className={`text-[#d0d0d0] hover:text-white transition-colors duration-300 text-sm uppercase tracking-wider relative group ${
+                  activeLink === link.href ? 'text-white' : ''
+                }`}
               >
                 {link.name}
+                <span className={`absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[#3a1c71] to-[#4776e6] transition-all duration-300 group-hover:w-full ${
+                  activeLink === link.href ? 'w-full' : ''
+                }`}></span>
               </Link>
             </motion.div>
           ))}
           <motion.div variants={linkVariants}>
             <Link 
               href="#contact"
-              className="bg-[#404040] hover:bg-[#505050] text-white px-5 py-2 rounded-full text-sm uppercase tracking-wider transition-colors duration-300"
+              className="bg-gradient-to-r from-[#3a1c71] to-[#4776e6] hover:from-[#4776e6] hover:to-[#3a1c71] text-white px-5 py-2 rounded-full text-sm uppercase tracking-wider transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
             >
               Get Started
             </Link>
@@ -79,7 +98,7 @@ const Navbar: React.FC = () => {
 
         {/* Mobile Menu Button */}
         <motion.button
-          className="md:hidden text-[#c0c0c0] hover:text-white"
+          className="md:hidden text-[#d0d0d0] hover:text-white"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           whileTap={{ scale: 0.95 }}
         >
@@ -113,7 +132,7 @@ const Navbar: React.FC = () => {
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
-            className="md:hidden bg-black/95 backdrop-blur-md"
+            className="md:hidden bg-gradient-to-b from-black/95 to-[#0a0a15]/95 backdrop-blur-md"
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
@@ -124,7 +143,9 @@ const Navbar: React.FC = () => {
                 <Link
                   key={link.name}
                   href={link.href}
-                  className="text-[#c0c0c0] hover:text-white transition-colors duration-300 text-sm uppercase tracking-wider py-2"
+                  className={`text-[#d0d0d0] hover:text-white transition-colors duration-300 text-sm uppercase tracking-wider py-2 border-b border-[#333] ${
+                    activeLink === link.href ? 'text-white border-[#4776e6]' : ''
+                  }`}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {link.name}
@@ -132,7 +153,7 @@ const Navbar: React.FC = () => {
               ))}
               <Link
                 href="#contact"
-                className="bg-[#404040] hover:bg-[#505050] text-white px-5 py-2 rounded-full text-sm uppercase tracking-wider transition-colors duration-300 inline-block text-center"
+                className="bg-gradient-to-r from-[#3a1c71] to-[#4776e6] hover:from-[#4776e6] hover:to-[#3a1c71] text-white px-5 py-2 rounded-full text-sm uppercase tracking-wider transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 inline-block text-center mt-2"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Get Started

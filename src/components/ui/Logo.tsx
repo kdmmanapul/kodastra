@@ -3,6 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import Image from 'next/image';
 
 interface LogoProps {
   className?: string;
@@ -16,25 +17,24 @@ const Logo: React.FC<LogoProps> = ({ className = '' }) => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
+        whileHover={{ scale: 1.05 }}
       >
-        <div className="relative w-10 h-10 mr-2">
-          <motion.div 
-            className="absolute inset-0 rounded-full border-2 border-[#c0c0c0]"
-            initial={{ scale: 0 }}
-            animate={{ scale: 1 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
+        <motion.div 
+          className="relative w-10 h-10 mr-2 purple-glow rounded-full overflow-hidden"
+          initial={{ scale: 0 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+        >
+          <Image 
+            src="/images/logo.png" 
+            alt="Kodastra Logo" 
+            width={40} 
+            height={40} 
+            className="object-contain"
           />
-          <motion.div 
-            className="absolute inset-0 flex items-center justify-center text-[#c0c0c0] font-bold text-2xl"
-            initial={{ y: 10, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.3, delay: 0.4 }}
-          >
-            K
-          </motion.div>
-        </div>
+        </motion.div>
         <motion.span 
-          className="text-xl font-bold text-gradient"
+          className="text-xl font-bold bg-gradient-to-r from-[#c0c0c0] via-white to-[#a0a0c0] bg-clip-text text-transparent"
           initial={{ x: -20, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.6 }}

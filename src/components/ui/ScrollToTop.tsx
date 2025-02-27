@@ -32,7 +32,7 @@ const ScrollToTop: React.FC = () => {
       {isVisible && (
         <motion.button
           onClick={scrollToTop}
-          className="fixed bottom-8 right-8 z-50 p-3 bg-[#404040] hover:bg-[#505050] text-white rounded-full shadow-lg transition-colors duration-300"
+          className="fixed bottom-8 right-8 z-50 p-3 bg-gradient-to-r from-[#3a1c71] to-[#4776e6] hover:from-[#4776e6] hover:to-[#3a1c71] text-white rounded-full shadow-lg transition-all duration-300 purple-glow"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 20 }}

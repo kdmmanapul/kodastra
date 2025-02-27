@@ -1,9 +1,10 @@
 "use client";
 
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import gsap from 'gsap';
 import Link from 'next/link';
+import AnimatedBackground from '../ui/AnimatedBackground';
 
 const Hero: React.FC = () => {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -11,8 +12,15 @@ const Hero: React.FC = () => {
   const subtitleRef = useRef<HTMLParagraphElement>(null);
   const ctaRef = useRef<HTMLDivElement>(null);
   const bgRef = useRef<HTMLDivElement>(null);
+  const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  useEffect(() => {
+    if (!isClient) return;
+    
     const ctx = gsap.context(() => {
       // Create a timeline for the hero animations
       const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
@@ -63,7 +71,7 @@ const Hero: React.FC = () => {
     }, heroRef);
 
     return () => ctx.revert(); // Cleanup
-  }, []);
+  }, [isClient]);
 
   return (
     <section 
@@ -71,13 +79,29 @@ const Hero: React.FC = () => {
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
       id="hero"
     >
-      {/* Background with gradient overlay */}
+      {/* Background with animated elements */}
       <div 
         ref={bgRef}
         className="absolute inset-0 z-0"
       >
-        <div className="absolute inset-0 bg-gradient-to-b from-black via-black/90 to-black/80 z-10"></div>
-        <div className="absolute inset-0 bg-[url('/images/grid.svg')] opacity-20 z-0"></div>
+        {/* Rich color gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a0a] via-[#101020] to-[#0a0a15] z-5"></div>
+        
+        {/* Colored accent gradients */}
+        <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-6">
+          <div className="absolute -top-[30%] -left-[10%] w-[50%] h-[50%] bg-[#3a1c71] opacity-10 blur-[120px] rounded-full"></div>
+          <div className="absolute top-[20%] -right-[10%] w-[40%] h-[40%] bg-[#4776e6] opacity-10 blur-[100px] rounded-full"></div>
+          <div className="absolute -bottom-[10%] left-[20%] w-[60%] h-[40%] bg-[#2c3e50] opacity-10 blur-[120px] rounded-full"></div>
+        </div>
+        
+        {/* Animated background elements */}
+        <AnimatedBackground variant="particles" className="z-10" />
+        
+        {/* Grid overlay with reduced opacity */}
+        <div className="absolute inset-0 bg-[url('/images/grid.svg')] opacity-15 z-15"></div>
+        
+        {/* Subtle noise texture for depth */}
+        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/noise-pattern.png')] opacity-5 z-20"></div>
       </div>
 
       {/* Hero content */}
@@ -89,21 +113,21 @@ const Hero: React.FC = () => {
             transition={{ duration: 0.5 }}
             className="mb-6 inline-block"
           >
-            <span className="px-4 py-1 rounded-full bg-[#404040] text-[#c0c0c0] text-sm uppercase tracking-wider">
+            <span className="px-4 py-1 rounded-full bg-gradient-to-r from-[#404060] to-[#404040] text-[#d0d0d0] text-sm uppercase tracking-wider shadow-lg">
               Innovative Software Solutions
             </span>
           </motion.div>
           
           <h1 
             ref={titleRef}
-            className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-gradient"
+            className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 bg-gradient-to-r from-[#c0c0c0] via-white to-[#a0a0c0] bg-clip-text text-transparent"
           >
             Transforming Ideas Into <br /> Digital Reality
           </h1>
           
           <p 
             ref={subtitleRef}
-            className="text-lg md:text-xl text-[#c0c0c0] mb-10 max-w-2xl mx-auto"
+            className="text-lg md:text-xl text-[#d0d0d0] mb-10 max-w-2xl mx-auto"
           >
             Specialized in AI, Web3, Web Applications and Software Development. 
             We create cutting-edge solutions that drive innovation and growth.
@@ -112,13 +136,13 @@ const Hero: React.FC = () => {
           <div ref={ctaRef} className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link 
               href="#contact"
-              className="px-8 py-3 bg-[#c0c0c0] hover:bg-white text-black font-medium rounded-full transition-colors duration-300 text-center"
+              className="px-8 py-3 bg-gradient-to-r from-[#c0c0c0] to-[#a0a0c0] hover:from-white hover:to-[#c0c0d0] text-black font-medium rounded-full transition-all duration-300 text-center shadow-lg hover:shadow-xl transform hover:-translate-y-1"
             >
               Get Started
             </Link>
             <Link 
               href="#services"
-              className="px-8 py-3 bg-transparent hover:bg-[#404040] text-[#c0c0c0] font-medium rounded-full border border-[#404040] hover:border-[#505050] transition-colors duration-300 text-center"
+              className="px-8 py-3 bg-transparent hover:bg-[#303050]/20 text-[#c0c0c0] font-medium rounded-full border border-[#404060] hover:border-[#505070] transition-all duration-300 text-center shadow-lg hover:shadow-xl transform hover:-translate-y-1"
             >
               Our Services
             </Link>
@@ -135,7 +159,7 @@ const Hero: React.FC = () => {
         >
           <path 
             d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V0C0,0,0,0,0,0z" 
-            fill="#0a0a0a"
+            fill="#0a0a15"
             fillOpacity="1"
           ></path>
         </svg>
@@ -154,9 +178,9 @@ const Hero: React.FC = () => {
           repeatDelay: 0.2
         }}
       >
-        <div className="w-8 h-12 rounded-full border-2 border-[#c0c0c0] flex justify-center">
+        <div className="w-8 h-12 rounded-full border-2 border-[#c0c0c0] bg-black/20 backdrop-blur-sm flex justify-center shadow-lg">
           <motion.div 
-            className="w-1 h-3 bg-[#c0c0c0] rounded-full mt-2"
+            className="w-1 h-3 bg-gradient-to-b from-[#c0c0c0] to-[#a0a0c0] rounded-full mt-2"
             animate={{ 
               y: [0, 10, 0],
             }}

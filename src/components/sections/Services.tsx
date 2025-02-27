@@ -1,9 +1,10 @@
 "use client";
 
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import AnimatedBackground from '../ui/AnimatedBackground';
 
 // Ensure ScrollTrigger is registered
 if (typeof window !== 'undefined') {
@@ -15,26 +16,46 @@ interface ServiceCardProps {
   description: string;
   icon: React.ReactNode;
   delay: number;
+  index: number;
 }
 
-const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, icon, delay }) => {
+const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, icon, delay, index }) => {
   const cardRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(cardRef, { once: true, amount: 0.3 });
+  
+  // Create different accent colors for each card
+  const accentColors = [
+    'from-[#3a1c71]/10 to-[#4776e6]/10', // Purple to blue
+    'from-[#4776e6]/10 to-[#a0a0c0]/10', // Blue to light purple
+    'from-[#a0a0c0]/10 to-[#3a1c71]/10', // Light purple to purple
+  ];
+  
+  const iconBgColors = [
+    'bg-gradient-to-r from-[#3a1c71] to-[#4776e6]',
+    'bg-gradient-to-r from-[#4776e6] to-[#505070]',
+    'bg-gradient-to-r from-[#505070] to-[#3a1c71]',
+  ];
+  
+  const accentIndex = index % 3;
 
   return (
     <motion.div
       ref={cardRef}
-      className="bg-gradient-to-br from-[#0f0f0f] to-[#1a1a1a] p-6 rounded-xl border border-[#333] hover:border-[#505050] transition-all duration-300 h-full"
+      className={`bg-gradient-to-br from-[#0f0f0f] to-[#1a1a1a] p-6 rounded-xl border border-[#333] hover:border-[#505070] transition-all duration-300 h-full backdrop-blur-sm ${accentColors[accentIndex]}`}
       initial={{ opacity: 0, y: 50 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
       transition={{ duration: 0.5, delay: delay * 0.1 }}
-      whileHover={{ y: -10, boxShadow: '0 10px 30px -10px rgba(192, 192, 192, 0.2)' }}
+      whileHover={{ 
+        y: -10, 
+        boxShadow: '0 10px 30px -10px rgba(71, 118, 230, 0.2)',
+        borderColor: '#606080'
+      }}
     >
-      <div className="bg-[#404040] p-3 rounded-lg w-14 h-14 flex items-center justify-center mb-5 text-white">
+      <div className={`${iconBgColors[accentIndex]} p-3 rounded-lg w-14 h-14 flex items-center justify-center mb-5 text-white shadow-lg`}>
         {icon}
       </div>
       <h3 className="text-xl font-semibold mb-3 text-white">{title}</h3>
-      <p className="text-[#a0a0a0]">{description}</p>
+      <p className="text-[#c0c0c0]">{description}</p>
     </motion.div>
   );
 };
@@ -43,8 +64,15 @@ const Services: React.FC = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const headingRef = useRef<HTMLHeadingElement>(null);
   const subheadingRef = useRef<HTMLParagraphElement>(null);
+  const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  useEffect(() => {
+    if (!isClient) return;
+    
     const ctx = gsap.context(() => {
       // Animate the heading with a text reveal effect
       gsap.fromTo(
@@ -80,7 +108,7 @@ const Services: React.FC = () => {
     }, sectionRef);
 
     return () => ctx.revert(); // Cleanup
-  }, []);
+  }, [isClient]);
 
   const services = [
     {
@@ -142,12 +170,17 @@ const Services: React.FC = () => {
   return (
     <section 
       ref={sectionRef}
-      className="py-20 bg-black relative overflow-hidden"
+      className="py-20 bg-gradient-to-b from-[#0a0a15] to-[#0a0a0a] relative overflow-hidden"
       id="services"
     >
       {/* Background elements */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-0 left-0 w-full h-full bg-[url('/images/grid.svg')] opacity-20"></div>
+      <div className="absolute inset-0">
+        {/* Colored accent gradients */}
+        <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
+          <div className="absolute top-[10%] -right-[20%] w-[40%] h-[40%] bg-[#3a1c71] opacity-5 blur-[120px] rounded-full"></div>
+          <div className="absolute bottom-[10%] -left-[10%] w-[30%] h-[30%] bg-[#4776e6] opacity-5 blur-[100px] rounded-full"></div>
+        </div>
+        <AnimatedBackground variant="grid" className="z-5" />
       </div>
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">
@@ -157,21 +190,21 @@ const Services: React.FC = () => {
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
-            className="px-4 py-1 rounded-full bg-[#404040] text-[#c0c0c0] text-sm uppercase tracking-wider inline-block mb-4"
+            className="px-4 py-1 rounded-full bg-gradient-to-r from-[#404060] to-[#404040] text-[#d0d0d0] text-sm uppercase tracking-wider inline-block mb-4 shadow-lg"
           >
             Our Services
           </motion.span>
           
           <h2 
             ref={headingRef}
-            className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-gradient"
+            className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-[#c0c0c0] via-white to-[#a0a0c0] bg-clip-text text-transparent"
           >
             Cutting-Edge Solutions
           </h2>
           
           <p 
             ref={subheadingRef}
-            className="text-lg text-[#c0c0c0] max-w-2xl mx-auto"
+            className="text-lg text-[#d0d0d0] max-w-2xl mx-auto"
           >
             We specialize in delivering innovative technology solutions that help businesses thrive in the digital age.
           </p>
@@ -185,6 +218,7 @@ const Services: React.FC = () => {
               description={service.description}
               icon={service.icon}
               delay={index}
+              index={index}
             />
           ))}
         </div>
