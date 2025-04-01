@@ -113,7 +113,7 @@ const Services: React.FC = () => {
   const services = [
     {
       title: 'AI Solutions',
-      description: 'Leverage the power of artificial intelligence to automate processes, gain insights, and create intelligent applications.',
+      description: 'AI-powered solutions to optimize workflows, drive insights, and create smarter applications.',
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
@@ -122,7 +122,7 @@ const Services: React.FC = () => {
     },
     {
       title: 'Web3 Development',
-      description: 'Build decentralized applications, smart contracts, and blockchain solutions for the next generation of the internet.',
+      description: 'Unlock the potential of Web3 with secure, scalable blockchain solutions, smart contracts, and decentralized apps.',
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
@@ -131,7 +131,7 @@ const Services: React.FC = () => {
     },
     {
       title: 'Web Applications',
-      description: 'Create responsive, high-performance web applications with modern frameworks and cutting-edge technologies.',
+      description: 'Accelerate your business with modern frameworks and advanced technologies to create responsive, high-performance web applications.',
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
@@ -139,8 +139,8 @@ const Services: React.FC = () => {
       ),
     },
     {
-      title: 'Software Development',
-      description: 'Develop custom software solutions tailored to your business needs, from desktop applications to mobile apps.',
+      title: 'Software Solutions',
+      description: 'Developing custom software that adapts to your needs—from desktop apps to mobile-first solutions.',
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
@@ -149,7 +149,7 @@ const Services: React.FC = () => {
     },
     {
       title: 'UI/UX Design',
-      description: 'Create intuitive, engaging user experiences with beautiful interfaces that drive user engagement and satisfaction.',
+      description: 'Create intuitive, visually appealing designs that drive user engagement and improve satisfaction.',
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
@@ -158,7 +158,7 @@ const Services: React.FC = () => {
     },
     {
       title: 'DevOps & Cloud',
-      description: 'Optimize your development workflow and infrastructure with cloud solutions and DevOps practices.',
+      description: 'Revolutionize your development and infrastructure with cloud solutions and DevOps strategies for continuous innovation.',
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />

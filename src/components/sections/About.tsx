@@ -144,7 +144,7 @@ const About: React.FC = () => {
             ref={subheadingRef}
             className="text-lg text-[#d0d0d0] max-w-2xl mx-auto"
           >
-            We&apos;re a team of passionate technologists dedicated to creating innovative digital solutions that drive business growth.
+            A team of innovators, creators, and problem-solvers—building transformative digital solutions that help businesses thrive in a fast-evolving world.
           </p>
         </div>
 
